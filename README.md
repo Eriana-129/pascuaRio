@@ -24,11 +24,41 @@ Las fechas que se quieran analizar deben de estar en el formato ymd, por lo que 
 
 ## Instalación
 
+En la consola de R, se deben de ejecutar las siguientes líneas:
+
 ```
 install.packages("devtools")
 library(devtools)
 devtools::install_github("Eriana-129/pascuaRio")
 library(pascuaRio)
 ```
+
+## Origen del nombre "pascuaRio"
+
+El nombre se compone de tres palabras:
+
+* Pascua: en referencia al Viernes Santo.
+* R: en referencia al software para el que fue creado, el poderosísimo R.
+* Calendario: en alusión a que se trata de varios días y años los que se contemplan en este paquete.
+
+## Razón de creación del paquete
+
+En mis actividades laborales se me pidió analizar varios data sets de diferentes temas, pero todos en relación de la semana santa de años pasados a fin de realizar medidas de prevención a la población. Dada la cantidad de bases de datos que tuve que analizar, así como la temporalidad de cada una que iba desde pocos años hasta lustros y casi una década, se me ocurrió la idea de que quizás no era la única persona con el problema de tener que analizar el comportamiento de las personas en estas fechas, sobre todo en países hispanohablantes. Además, considerando que la Semana Santa no ocurre en una fecha establecida, esto representa un reto al momento de construir si quiera un data frame de todas las fechas de este periodo religioso. Por estas razones fue que decidí crear pascuaRio.
+
+Finalmente, en caso de que el usuario solo quiera conservar el csv de todas las fechas de la Semana Santa desde 1997 a 2050, debe de ejecutar estas líneas de código en la consola de R:
+
+```
+library(data.table) #para csv
+fwrite(data, "./data.csv", encoding = "UTF-8")
+
+library(openxlsx) #para excel
+write.xlsx(data, "./data.xlsx")
+```
+![Banner](./fechas.JPG)
+
+## Reporte de errores
+
+En caso de encontrar algún problema al usar pascuaRio, favor de reportarlo en [GitHub](https://github.com/Eriana-129/pascuaRio/issues). La posibilidad de que pascuaRio solicite el paquete "data.table" es mínima, ya que que lo programe para que ese paquete se instale y cargue de forma automática.
+
 
 
