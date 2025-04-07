@@ -43,18 +43,21 @@ El nombre se compone de tres palabras:
 
 ## Razón de creación del paquete
 
-En mis actividades laborales se me pidió analizar varios data sets de diferentes temas, pero todos en relación de la semana santa de años pasados a fin de realizar medidas de prevención a la población. Dada la cantidad de bases de datos que tuve que analizar, así como la temporalidad de cada una que iba desde pocos años hasta lustros y casi una década, se me ocurrió la idea de que quizás no era la única persona con el problema de tener que analizar el comportamiento de las personas en estas fechas, sobre todo en países hispanohablantes. Además, considerando que la Semana Santa no ocurre en una fecha establecida, esto representa un reto al momento de construir si quiera un data frame de todas las fechas de este periodo religioso. Por estas razones fue que decidí crear pascuaRio.
+En mis actividades laborales se me pidió analizar varios data sets de diferentes temas, pero todos en relación de la semana santa de años pasados a fin de realizar medidas de prevención para cuidar a la población. Dada la cantidad de bases de datos que tuve que analizar, así como la temporalidad de cada una que iba desde pocos años hasta lustros, se me ocurrió la idea de que quizás no era la única persona con el problema de tener que analizar el comportamiento de las personas en estas fechas, sobre todo en países hispanohablantes. Además, considerando que la Semana Santa no ocurre en una fecha establecida, esto representa un reto al momento de construir si quiera un data frame de todas las fechas de este periodo religioso. Por estas razones fue que decidí crear pascuaRio.
 
 Finalmente, en caso de que el usuario solo quiera conservar el csv de todas las fechas de la Semana Santa desde 1997 a 2050, debe de ejecutar estas líneas de código en la consola de R:
 
 ```
 library(data.table) #para csv
-fwrite(data, "./data.csv", encoding = "UTF-8")
+fwrite(pascuario, "./data.csv", encoding = "UTF-8")
 
 library(openxlsx) #para excel
-write.xlsx(data, "./data.xlsx")
+write.xlsx(pascuario, "./data.xlsx")
 ```
-![Banner](./fechas.JPG)
+
+Ejemplo del data frame:
+
+![Fechas](./fechas.jpg)
 
 ## Reporte de errores
 
